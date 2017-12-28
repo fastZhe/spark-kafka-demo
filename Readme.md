@@ -27,7 +27,7 @@
 
 
 
-###config.properties配置
+### config.properties配置
     duration=15   //时间窗口、间隔
     bootstrap.servers=10.211.55.5:9092    //kafka 地址
     topic=test      //消费主题
