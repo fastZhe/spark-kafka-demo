@@ -1,4 +1,4 @@
-###spark-kafka整合案例
+### spark-kafka整合案例
 * com.hz.streaming.message.Message 是处理消息的超类
 * com.hz.streaming.SparkStreamingKafka 主函数
 
@@ -27,7 +27,7 @@
 
 
 
-###config.properties配置
+### config.properties配置
     duration=15   //时间窗口、间隔
     bootstrap.servers=10.211.55.5:9092    //kafka 地址
     topic=test      //消费主题
