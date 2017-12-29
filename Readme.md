@@ -2,8 +2,7 @@
 * com.hz.streaming.message.Message 是处理消息的超类
 * com.hz.streaming.SparkStreamingKafka 主函数
 
-
-
+-------------------------------------------------
     yarn 提交语句：
     
     spark-submit \
