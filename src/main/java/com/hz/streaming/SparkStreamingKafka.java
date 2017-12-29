@@ -1,14 +1,11 @@
 package com.hz.streaming;
 
-import com.fasterxml.jackson.databind.deser.std.StringDeserializer;
 import com.hz.streaming.config.ConfigAll;
 import com.hz.streaming.message.Message;
 import com.hz.streaming.utils.Constance;
 import com.hz.streaming.utils.GenerateInstance;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.spark.SparkConf;
-import org.apache.spark.SparkFiles;
-import org.apache.spark.streaming.Duration;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
@@ -65,7 +62,6 @@ public class SparkStreamingKafka {
         Message msg=(Message) GenerateInstance.getInstance(map.get(Constance.APP_MESSAGE_CLASS));
         msg.setConfig(map);
         msg.exec(stream);
-
 
 
         jssc.start();
