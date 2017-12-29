@@ -3,7 +3,9 @@
 * com.hz.streaming.SparkStreamingKafka 主函数
 
 
+
     yarn 提交语句：
+    
     spark-submit \
     --class com.hz.streaming.SparkStreamingKafka \
     --master yarn \
@@ -15,6 +17,7 @@
     /opt/app/config.properties
     ----------------------------------------------
     standlone 提交语句
+    
     spark-submit \
     --class com.hz.streaming.SparkStreamingKafka \
     --master spark://hz:7077 \
