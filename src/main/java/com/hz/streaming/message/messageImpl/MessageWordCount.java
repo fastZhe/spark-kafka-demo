@@ -1,5 +1,6 @@
 package com.hz.streaming.message.messageImpl;
 
+import com.google.common.collect.Maps;
 import com.hz.streaming.message.Message;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.spark.streaming.api.java.JavaInputDStream;
@@ -11,7 +12,7 @@ import java.util.Map;
 public class MessageWordCount implements Message{
     @Override
     public void setConfig(Map<String, String> config) {
-
+        Maps.newHashMap();
     }
 
     @Override
@@ -19,6 +20,5 @@ public class MessageWordCount implements Message{
         JavaInputDStream<ConsumerRecord<String, String>> stream = (JavaInputDStream<ConsumerRecord<String, String>>) obj;
         stream.map(rdd->rdd.value()).flatMap(rdd-> (Arrays.asList(rdd.split(" ")).iterator()))
                 .mapToPair(rdd->new Tuple2<>(rdd,1)).reduceByKey((r1,r2)->(r1+r2)).print();
-
     }
 }
